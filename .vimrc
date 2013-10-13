@@ -27,6 +27,7 @@
     Bundle 'arnaud-lb/vim-php-namespace'
     Bundle 'austintaylor/vim-commaobject'
     Bundle 'beberlei/vim-php-refactor'
+    Bundle 'christoomey/vim-tmux-navigator'
     Bundle 'honza/vim-snippets'
     Bundle 'jgdavey/tslime.vim'
     Bundle 'joonty/vim-phpunitqf.git'
