@@ -1,9 +1,0 @@
-[submodule "gists/.vimrc"]
-	path = gists/.vimrc
-	url = git@gist.github.com:1698770.git
-[submodule "gists/.tmux.conf"]
-	path = gists/.tmux.conf
-	url = git@gist.github.com:2014511.git
-[submodule "gists/config.fish"]
-	path = gists/config.fish
-	url = git@gist.github.com:5753440.git
