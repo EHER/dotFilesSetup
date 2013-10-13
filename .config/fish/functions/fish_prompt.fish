@@ -12,7 +12,6 @@ function fish_prompt
         echo $vi_mode
     end
 
-
     set -l cyan (set_color -o cyan)
     set -l yellow (set_color -o yellow)
     set -l red (set_color -o red)
@@ -20,8 +19,7 @@ function fish_prompt
     set -l normal (set_color normal)
 
     set -l arrow "$red➜ "
-    set -l cwd $cyan(basename (prompt_pwd))
-    set -l pwd $cyan(prompt_pwd)
+    set -l pwd "$cyan " (prompt_pwd)
 
     if not set -q __fish_prompt_cwd
         set -g __fish_prompt_cwd (set_color $fish_color_cwd)
@@ -41,5 +39,5 @@ function fish_prompt
         set git_info "$blue git:($git_branch$dirty$blue)"
     end
 
-    echo -n -s $arrow $pwd $vi_info $git_info $normal '> '
+    echo -n -s $arrow $vi_info $git_info $pwd $normal '> '
 end
