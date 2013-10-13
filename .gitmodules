@@ -6,4 +6,4 @@
 	url = git@gist.github.com:2014511.git
 [submodule "gists/config.fish"]
 	path = gists/config.fish
-	url = https://gist.github.com/5753440.git
+	url = git@gist.github.com:5753440.git
