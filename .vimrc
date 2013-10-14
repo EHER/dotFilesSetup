@@ -105,6 +105,10 @@
     " Tagbar
     nmap <Leader>c :TagbarToggle<CR>
 
+    " tmux/vim navigation
+    let g:tmux_navigator_no_mappings = 1
+    nnoremap <silent> <C-\> :TmuxNavigateRight<cr>
+
 " }}}
 
 " Display stuffs {{{
