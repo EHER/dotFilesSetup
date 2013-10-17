@@ -27,6 +27,7 @@
     Bundle 'arnaud-lb/vim-php-namespace'
     Bundle 'austintaylor/vim-commaobject'
     Bundle 'beberlei/vim-php-refactor'
+    Bundle 'bling/vim-airline'
     Bundle 'honza/vim-snippets'
     Bundle 'jgdavey/tslime.vim'
     Bundle 'joonty/vim-phpunitqf.git'
@@ -37,11 +38,9 @@
     Bundle 'mattn/webapi-vim'
     Bundle 'nanotech/jellybeans.vim'
     Bundle 'plasticboy/vim-markdown'
-    Bundle 'renanivo/vim-powerline'
     Bundle 'scrooloose/nerdtree'
     Bundle 'scrooloose/syntastic'
     Bundle 'shawncplus/phpcomplete.vim'
-    Bundle 'techlivezheng/vim-plugin-minibufexpl'
     Bundle 'tpope/vim-fugitive'
     Bundle 'tpope/vim-repeat'
     Bundle 'tpope/vim-surround'
@@ -141,6 +140,11 @@
 
     " Status Line
     set laststatus=2
+
+    " Airline
+    let g:airline#extensions#tabline#enabled = 1
+    let g:airline#extensions#tabline#left_sep = ' '
+    let g:airline#extensions#tabline#left_alt_sep = '|'
 
 " }}}
 
