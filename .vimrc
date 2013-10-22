@@ -23,6 +23,7 @@
     Bundle 'Lokaltog/vim-easymotion'
     Bundle 'Shougo/neocomplcache'
     Bundle 'Shougo/neosnippet'
+    Bundle 'afternoon/vim-phpunit'
     Bundle 'airblade/vim-gitgutter'
     Bundle 'arnaud-lb/vim-php-namespace'
     Bundle 'austintaylor/vim-commaobject'
@@ -41,6 +42,7 @@
     Bundle 'scrooloose/nerdtree'
     Bundle 'scrooloose/syntastic'
     Bundle 'shawncplus/phpcomplete.vim'
+    Bundle 'tpope/vim-dispatch.git'
     Bundle 'tpope/vim-fugitive'
     Bundle 'tpope/vim-repeat'
     Bundle 'tpope/vim-surround'
@@ -102,6 +104,9 @@
 
     " Tagbar
     nmap <Leader>c :TagbarToggle<CR>
+
+    " Dispatch
+    nnoremap <Leader>d :Dispatch<CR>
 
 " }}}
 
