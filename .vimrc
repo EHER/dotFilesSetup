@@ -107,6 +107,7 @@
 
     " Dispatch
     nnoremap <Leader>d :Dispatch<CR>
+    autocmd FileType php let b:dispatch = 'phpunit'
 
 " }}}
 
