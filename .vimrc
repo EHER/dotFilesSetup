@@ -195,3 +195,12 @@
 
 " }}}
 
+" Macros {{{
+
+    let @w = '?+,r'
+    let @r = 'dG:'
+    let @t = 'ggjjjwwwwwwwwyeggjjjjwvepvbuvU'
+    let @e = ',vs'
+    let @v = '@w@r@t@e'
+
+" }}}
