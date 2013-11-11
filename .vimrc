@@ -23,6 +23,7 @@
     Bundle 'Lokaltog/vim-easymotion'
     Bundle 'Shougo/neocomplcache'
     Bundle 'Shougo/neosnippet'
+    Bundle 'afternoon/vim-phpunit'
     Bundle 'airblade/vim-gitgutter'
     Bundle 'arnaud-lb/vim-php-namespace'
     Bundle 'austintaylor/vim-commaobject'
@@ -41,6 +42,7 @@
     Bundle 'scrooloose/nerdtree'
     Bundle 'scrooloose/syntastic'
     Bundle 'shawncplus/phpcomplete.vim'
+    Bundle 'tpope/vim-dispatch.git'
     Bundle 'tpope/vim-fugitive'
     Bundle 'tpope/vim-repeat'
     Bundle 'tpope/vim-surround'
@@ -103,6 +105,10 @@
     " Tagbar
     nmap <Leader>c :TagbarToggle<CR>
 
+    " Dispatch
+    nnoremap <Leader>d :Dispatch<CR>
+    autocmd FileType php let b:dispatch = 'phpunit'
+
 " }}}
 
 " Display stuffs {{{
@@ -143,7 +149,7 @@
 
     " Airline
     let g:airline#extensions#tabline#enabled = 1
-    let g:airline#extensions#tabline#left_sep = '⮀'
+    let g:airline#extensions#tabline#left_sep = ''
     let g:airline#extensions#tabline#left_alt_sep = '|'
 
     let g:airline_detect_paste=1
@@ -152,14 +158,8 @@
         let g:airline_symbols = {}
     endif
 
-    " unicode symbols
-    let g:airline_left_sep = '⮀'
-    let g:airline_left_alt_sep = '⮁'
-    let g:airline_right_sep = '⮂'
-    let g:airline_right_alt_sep = '⮃'
-    let g:airline_symbols.branch = '⭠'
-    let g:airline_symbols.readonly = '⭤'
-    let g:airline_symbols.linenr = '⭡'
+    let g:airline_left_sep = ''
+    let g:airline_right_sep = ''
 
 " }}}
 
