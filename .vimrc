@@ -22,6 +22,7 @@
     Bundle 'EHER/vim-bundle-freeze'
     Bundle 'Lokaltog/vim-easymotion'
     Bundle 'Shougo/neocomplcache'
+    "Bundle 'Shougo/neocomplete'
     Bundle 'Shougo/neosnippet'
     Bundle 'afternoon/vim-phpunit'
     Bundle 'airblade/vim-gitgutter'
@@ -57,9 +58,19 @@
     " Change leader map
     let mapleader=","
 
-    "key mapping for tab navigation
-    nmap <silent> <Tab> :bn<cr>
-    nmap <silent> <S-Tab> :bp<cr>
+    " key mapping buffer navigation
+    nmap <silent> <leader>bn :bn<cr>
+    nmap <silent> <leader>bp :bp<cr>
+    nmap <silent> <leader>bd :bd<cr>
+
+    " key mapping tab navigation
+    nmap <silent> <leader>tn :tabnext<cr>
+    nmap <silent> <leader>tp :tabprevious<cr>
+    nmap <silent> <leader>tc :tabnew<cr>
+
+    " tab key mapping
+    nmap <silent> <Tab> :tabnext<cr>
+    nmap <silent> <S-Tab> :tabprevious<cr>
 
     " disable arrow keys
     map <up> <nop>
@@ -76,7 +87,7 @@
     set pastetoggle=<F2>
 
     " ;=: trick
-    nnoremap ; :
+    "nnoremap ; :
 
     " Nerdtree shortcut
     map <leader>n :NERDTreeToggle<CR>
@@ -198,7 +209,7 @@
 " Macros {{{
 
     let @w = '?+,r'
-    let @r = 'dG:'
+    let @r = 'dG:r ~/.vmail/default/template/novo_cadastro.txt'
     let @t = 'ggjjjwwwwwwwwyeggjjjjwvepvbuvU'
     let @e = ',vs'
     let @v = '@w@r@t@e'
