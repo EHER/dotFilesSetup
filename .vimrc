@@ -21,8 +21,7 @@
 
     Bundle 'EHER/vim-bundle-freeze'
     Bundle 'Lokaltog/vim-easymotion'
-    Bundle 'Shougo/neocomplcache'
-    "Bundle 'Shougo/neocomplete'
+    Bundle 'Shougo/neocomplete'
     Bundle 'Shougo/neosnippet'
     Bundle 'afternoon/vim-phpunit'
     Bundle 'airblade/vim-gitgutter'
@@ -93,7 +92,7 @@
     map <leader>n :NERDTreeToggle<CR>
 
     " Quickly edit/reload the vimrc file
-    nmap <silent> <leader>ev :e $MYVIMRC<CR>
+    nmap <silent> <leader>ev :tabnew $MYVIMRC<CR>
     nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
     " Configure php-namespace
@@ -118,7 +117,17 @@
 
     " Dispatch
     nnoremap <Leader>d :Dispatch<CR>
-    autocmd FileType php let b:dispatch = 'phpunit'
+    "autocmd FileType php let b:dispatch = 'phpunit'
+
+    " Tslime
+    vmap <C-c><C-c> <Plug>SendSelectionToTmux
+    nmap <C-c><C-c> <Plug>NormalModeSendToTmux
+    nmap <C-c>r <Plug>SetTmuxVars
+
+    " Plugin key-mappings.
+    imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+    smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+    xmap <C-k>     <Plug>(neosnippet_expand_target)
 
 " }}}
 
@@ -189,20 +198,13 @@
     set noerrorbells         " don't beep
 
     " Enable autocomplete
-    let g:neocomplcache_enable_at_startup = 1
+    let g:neocomplete#enable_at_startup = 1
 
     " Configure phpcs
     let g:syntastic_php_phpcs_args = "--report=csv --standard=PSR2"
 
-    " Tslime
-    vmap <C-c><C-c> <Plug>SendSelectionToTmux
-    nmap <C-c><C-c> <Plug>NormalModeSendToTmux
-    nmap <C-c>r <Plug>SetTmuxVars
-
-    " Plugin key-mappings.
-    imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-    smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-    xmap <C-k>     <Plug>(neosnippet_expand_target)
+    " Dispatch
+    "autocmd FileType php let b:dispatch = 'phpunit'
 
 " }}}
 
@@ -215,3 +217,4 @@
     let @v = '@w@r@t@e'
 
 " }}}
+
