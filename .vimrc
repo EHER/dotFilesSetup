@@ -34,6 +34,7 @@
     Bundle 'joonty/vim-phpunitqf.git'
     Bundle 'kien/ctrlp.vim'
     Bundle 'majutsushi/tagbar'
+    Bundle 'maksimr/vim-translator'
     Bundle 'mattn/emmet-vim'
     Bundle 'mattn/gist-vim'
     Bundle 'mattn/webapi-vim'
@@ -225,5 +226,14 @@
     inoremap [ []<Esc>i
     inoremap " ""<Esc>i
     inoremap ' ''<Esc>i
+
+" }}}
+
+" Google Translate {{{
+
+    let g:goog_user_conf = {
+        \ 'langpair': 'nl|en',
+        \ 'cmd': 'node',
+        \ 'v_key': 'T' }
 
 " }}}
