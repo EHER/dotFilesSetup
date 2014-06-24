@@ -212,9 +212,18 @@
 
     let @w = '?+,r'
     let @r = 'dG:r ~/.vmail/default/template/novo_cadastro.txt'
-    let @t = 'ggjjjwwwwwwwwyeggjjjjwvepvbuvU'
+    let @t = 'ggjjjwwwwwwwwyeggjjjjjwvepvbuvU'
     let @e = ',vs'
     let @v = '@w@r@t@e'
 
 " }}}
 
+" Open/Close Magic {{{
+
+    inoremap ( ()<Esc>i
+    inoremap { {}<Esc>i
+    inoremap [ []<Esc>i
+    inoremap " ""<Esc>i
+    inoremap ' ''<Esc>i
+
+" }}}
