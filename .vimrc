@@ -122,6 +122,10 @@
     nnoremap <Leader>d :Dispatch<CR>
     "autocmd FileType php let b:dispatch = 'phpunit'
 
+    " Copen
+    map cn <esc>:cn<cr>
+    map cp <esc>:cp<cr>
+
     " Tslime
     vmap <C-c><C-c> <Plug>SendSelectionToTmux
     nmap <C-c><C-c> <Plug>NormalModeSendToTmux
