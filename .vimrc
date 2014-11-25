@@ -25,6 +25,7 @@
     Bundle 'Shougo/neosnippet'
     Bundle 'afternoon/vim-phpunit'
     Bundle 'airblade/vim-gitgutter'
+    Bundle 'altercation/vim-colors-solarized'
     Bundle 'arnaud-lb/vim-php-namespace'
     Bundle 'austintaylor/vim-commaobject'
     Bundle 'beberlei/vim-php-refactor'
@@ -39,7 +40,7 @@
     Bundle 'mattn/emmet-vim'
     Bundle 'mattn/gist-vim'
     Bundle 'mattn/webapi-vim'
-    Bundle 'nanotech/jellybeans.vim'
+    "Bundle 'nanotech/jellybeans.vim'
     Bundle 'plasticboy/vim-markdown'
     Bundle 'rhysd/open-pdf.vim'
     Bundle 'scrooloose/nerdtree'
@@ -121,6 +122,7 @@
     " Dispatch
     nnoremap <Leader>d :Dispatch<CR>
     "autocmd FileType php let b:dispatch = 'phpunit'
+    autocmd FileType php let b:dispatch = 'api/bin/phpunit -c api/app %'
 
     " Copen
     map cn <esc>:cn<cr>
@@ -158,7 +160,9 @@
     match OverLength /\%81v.\+/
 
     " Color Scheme
-    colorscheme jellybeans
+    "colorscheme jellybeans
+    set background=dark
+    colorscheme solarized
 
     " Enable syntax colors
     syntax enable
@@ -188,6 +192,7 @@
     let g:airline_left_sep = ''
     let g:airline_right_sep = ''
 
+
 " }}}
 
 " Etc {{{
@@ -207,11 +212,17 @@
     " Enable autocomplete
     let g:neocomplete#enable_at_startup = 1
 
-    " Configure phpcs
-    let g:syntastic_php_phpcs_args = "--report=csv --standard=PSR2"
+    " Syntastic checkers
+    let g:syntastic_php_checkers = ['php', 'phpcs']
 
-    " Dispatch
-    "autocmd FileType php let b:dispatch = 'phpunit'
+    " Configure phpcs
+    let g:syntastic_php_phpcs_args = '--report=csv --standard=PSR2'
+
+    " CtrlP from current path
+    let g:ctrlp_working_path_mode = 'ar'
+
+    " Ignore files
+    set wildignore+=*/coverage/*,*/tmp/*,*/cache/*,*/log/*,*.so,*.swp,*.zip
 
 " }}}
 
