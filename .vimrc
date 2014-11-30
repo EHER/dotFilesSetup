@@ -94,6 +94,7 @@
 
     " Nerdtree shortcut
     map <leader>n :NERDTreeToggle<CR>
+    map <leader>N :NERDTreeFind<CR>
 
     " Quickly edit/reload the vimrc file
     nmap <silent> <leader>ev :tabnew $MYVIMRC<CR>
@@ -121,8 +122,7 @@
 
     " Dispatch
     nnoremap <Leader>d :Dispatch<CR>
-    "autocmd FileType php let b:dispatch = 'phpunit'
-    autocmd FileType php let b:dispatch = 'api/bin/phpunit -c api/app %'
+    autocmd FileType php let b:dispatch = 'phpunit %'
 
     " Copen
     map cn <esc>:cn<cr>
