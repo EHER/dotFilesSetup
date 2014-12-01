@@ -86,9 +86,6 @@
     cmap <left> <nop>
     cmap <right> <nop>
 
-    " Toggle paste mode
-    set pastetoggle=<F2>
-
     " ;=: trick
     "nnoremap ; :
 
@@ -238,13 +235,18 @@
 
 " Open/Close Magic {{{
 
-    inoremap ( ()<Esc>i
-    inoremap { {}<Esc>i
-    inoremap [ []<Esc>i
-    inoremap " ""<Esc>i
-    inoremap ' ''<Esc>i
+"    inoremap ( ()<Esc>i
+"    inoremap { {}<Esc>i
+"    inoremap [ []<Esc>i
+"    inoremap " ""<Esc>i
+"    inoremap ' ''<Esc>i
 
 " }}}
+
+" Toggle paste mode
+"    set pastetoggle=<F2>
+
+
 
 " Google Translate {{{
 
