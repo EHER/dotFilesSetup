@@ -21,7 +21,7 @@
 
     Bundle 'EHER/vim-bundle-freeze'
     Bundle 'Lokaltog/vim-easymotion'
-    Bundle 'Shougo/neocomplete'
+    Bundle 'Shougo/neocomplcache'
     Bundle 'Shougo/neosnippet'
     Bundle 'afternoon/vim-phpunit'
     Bundle 'airblade/vim-gitgutter'
@@ -33,6 +33,7 @@
     Bundle 'evidens/vim-twig'
     Bundle 'honza/vim-snippets'
     Bundle 'jgdavey/tslime.vim'
+    Bundle 'jistr/vim-nerdtree-tabs'
     Bundle 'joonty/vim-phpunitqf.git'
     Bundle 'kien/ctrlp.vim'
     Bundle 'majutsushi/tagbar'
@@ -40,7 +41,6 @@
     Bundle 'mattn/emmet-vim'
     Bundle 'mattn/gist-vim'
     Bundle 'mattn/webapi-vim'
-    "Bundle 'nanotech/jellybeans.vim'
     Bundle 'plasticboy/vim-markdown'
     Bundle 'rhysd/open-pdf.vim'
     Bundle 'scrooloose/nerdtree'
@@ -50,6 +50,7 @@
     Bundle 'tpope/vim-fugitive'
     Bundle 'tpope/vim-repeat'
     Bundle 'tpope/vim-surround'
+    Bundle 'vim-php/tagbar-phpctags.vim'
     Bundle 'wakatime/vim-wakatime'
     Bundle 'xolox/vim-easytags'
     Bundle 'xolox/vim-misc'
@@ -90,7 +91,7 @@
     "nnoremap ; :
 
     " Nerdtree shortcut
-    map <leader>n :NERDTreeToggle<CR>
+    map <Leader>n <plug>NERDTreeMirrorToggle<CR>
     map <leader>N :NERDTreeFind<CR>
 
     " Quickly edit/reload the vimrc file
@@ -130,10 +131,11 @@
     nmap <C-c><C-c> <Plug>NormalModeSendToTmux
     nmap <C-c>r <Plug>SetTmuxVars
 
-    " Plugin key-mappings.
+    " Neosnippet
     imap <C-k>     <Plug>(neosnippet_expand_or_jump)
     smap <C-k>     <Plug>(neosnippet_expand_or_jump)
     xmap <C-k>     <Plug>(neosnippet_expand_target)
+    let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 
 " }}}
 
