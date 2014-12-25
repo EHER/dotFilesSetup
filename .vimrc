@@ -33,6 +33,7 @@
     Bundle 'evidens/vim-twig'
     Bundle 'honza/vim-snippets'
     Bundle 'jgdavey/tslime.vim'
+    Bundle 'jiangmiao/auto-pairs'
     Bundle 'jistr/vim-nerdtree-tabs'
     Bundle 'joonty/vim-phpunitqf.git'
     Bundle 'kien/ctrlp.vim'
@@ -123,8 +124,10 @@
     autocmd FileType php let b:dispatch = 'phpunit %'
 
     " Copen
+    map co <esc>:copen<cr>
     map cn <esc>:cn<cr>
     map cp <esc>:cp<cr>
+    map cc <esc>:cclose<cr>
 
     " Tslime
     vmap <C-c><C-c> <Plug>SendSelectionToTmux
@@ -191,6 +194,9 @@
     let g:airline_left_sep = ''
     let g:airline_right_sep = ''
 
+    " .vimrc per project
+    set exrc            " enable per-directory .vimrc files
+    set secure          " disable unsafe commands in local .vimrc files
 
 " }}}
 
@@ -235,23 +241,10 @@
 
 " }}}
 
-" Open/Close Magic {{{
-
-"    inoremap ( ()<Esc>i
-"    inoremap { {}<Esc>i
-"    inoremap [ []<Esc>i
-"    inoremap " ""<Esc>i
-"    inoremap ' ''<Esc>i
-
-" }}}
-
 " Toggle paste mode
-"    set pastetoggle=<F2>
-
-
+    set pastetoggle=<F2>
 
 " Google Translate {{{
-
     let g:goog_user_conf = {
         \ 'langpair': 'nl|en',
         \ 'cmd': 'node',
