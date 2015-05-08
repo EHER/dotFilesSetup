@@ -23,8 +23,6 @@
     Bundle 'Lokaltog/vim-easymotion'
     Bundle 'Shougo/neocomplcache'
     Bundle 'Shougo/neosnippet'
-    Bundle 'scrooloose/nerdtree'
-    Bundle 'Xuyuanp/nerdtree-git-plugin'
     Bundle 'afternoon/vim-phpunit'
     Bundle 'airblade/vim-gitgutter'
     Bundle 'altercation/vim-colors-solarized'
@@ -46,6 +44,8 @@
     Bundle 'mattn/webapi-vim'
     Bundle 'nanotech/jellybeans.vim'
     Bundle 'plasticboy/vim-markdown'
+    Bundle 'scrooloose/nerdcommenter'
+    Bundle 'scrooloose/nerdtree'
     Bundle 'scrooloose/syntastic'
     Bundle 'shawncplus/phpcomplete.vim'
     Bundle 'tpope/vim-dispatch.git'
@@ -56,6 +56,7 @@
     Bundle 'wakatime/vim-wakatime'
     Bundle 'xolox/vim-easytags'
     Bundle 'xolox/vim-misc'
+    Bundle 'xuyuanp/nerdtree-git-plugin'
 
 " }}}
 
