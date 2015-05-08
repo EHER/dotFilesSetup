@@ -23,6 +23,8 @@
     Bundle 'Lokaltog/vim-easymotion'
     Bundle 'Shougo/neocomplcache'
     Bundle 'Shougo/neosnippet'
+    Bundle 'scrooloose/nerdtree'
+    Bundle 'Xuyuanp/nerdtree-git-plugin'
     Bundle 'afternoon/vim-phpunit'
     Bundle 'airblade/vim-gitgutter'
     Bundle 'altercation/vim-colors-solarized'
@@ -31,6 +33,7 @@
     Bundle 'beberlei/vim-php-refactor'
     Bundle 'bling/vim-airline'
     Bundle 'evidens/vim-twig'
+    Bundle 'hhvm/vim-hack'
     Bundle 'honza/vim-snippets'
     Bundle 'jgdavey/tslime.vim'
     Bundle 'jiangmiao/auto-pairs'
@@ -38,13 +41,11 @@
     Bundle 'joonty/vim-phpunitqf.git'
     Bundle 'kien/ctrlp.vim'
     Bundle 'majutsushi/tagbar'
-    Bundle 'maksimr/vim-translator'
     Bundle 'mattn/emmet-vim'
     Bundle 'mattn/gist-vim'
     Bundle 'mattn/webapi-vim'
+    Bundle 'nanotech/jellybeans.vim'
     Bundle 'plasticboy/vim-markdown'
-    Bundle 'rhysd/open-pdf.vim'
-    Bundle 'scrooloose/nerdtree'
     Bundle 'scrooloose/syntastic'
     Bundle 'shawncplus/phpcomplete.vim'
     Bundle 'tpope/vim-dispatch.git'
@@ -90,6 +91,9 @@
 
     " ;=: trick
     "nnoremap ; :
+
+    " esc trick
+    inoremap jk <esc>
 
     " Nerdtree shortcut
     map <Leader>n <plug>NERDTreeMirrorToggle<CR>
@@ -142,7 +146,7 @@
 
 " }}}
 
-" Display stuffs {{{
+" Theme {{{
 
     " For spaces instead of tabs
     set tabstop=4
@@ -163,8 +167,8 @@
 
     " Color Scheme
     "colorscheme jellybeans
-    set background=dark
     colorscheme solarized
+    set background=dark
 
     " Enable syntax colors
     syntax enable
@@ -194,10 +198,6 @@
     let g:airline_left_sep = ''
     let g:airline_right_sep = ''
 
-    " .vimrc per project
-    set exrc            " enable per-directory .vimrc files
-    set secure          " disable unsafe commands in local .vimrc files
-
 " }}}
 
 " Etc {{{
@@ -214,6 +214,10 @@
     set visualbell           " don't beep
     set noerrorbells         " don't beep
 
+    " .vimrc per project
+    set exrc            " enable per-directory .vimrc files
+    set secure          " disable unsafe commands in local .vimrc files
+
     " Enable autocomplete
     let g:neocomplete#enable_at_startup = 1
 
@@ -229,25 +233,7 @@
     " Ignore files
     set wildignore+=*/coverage/*,*/tmp/*,*/cache/*,*/log/*,*.so,*.swp,*.zip
 
-" }}}
-
-" Macros {{{
-
-    let @w = '?+,r'
-    let @r = 'dG:r ~/.vmail/default/template/novo_cadastro.txt'
-    let @t = 'ggjjjwwwwwwwwyeggjjjjjwvepvbuvU'
-    let @e = ',vs'
-    let @v = '@w@r@t@e'
-
-" }}}
-
-" Toggle paste mode
+    " Toggle paste mode
     set pastetoggle=<F2>
-
-" Google Translate {{{
-    let g:goog_user_conf = {
-        \ 'langpair': 'nl|en',
-        \ 'cmd': 'node',
-        \ 'v_key': 'T' }
 
 " }}}

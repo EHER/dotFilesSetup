@@ -1,11 +1,10 @@
 default: help
 
+fish: _create_fish_link
 help: _display_help_message
 install: _create_vim_link _create_tmux_link _create_fish_link _install-ansible _run-provision
-fish: _create_fish_link
 tmux: _create_tmux_link
 vim: _create_vim_link
-
 
 _create_vim_link:
 	@ln -si $(shell pwd)/.vimrc ~/.vimrc
