@@ -2,14 +2,17 @@
 - hosts: localhost
   tasks:
     - homebrew_tap: tap=Goles/battery state=present
+    - homebrew_tap: tap=homebrew/php state=present
     - homebrew: update_homebrew=yes
     - homebrew: name=battery state=latest
     - homebrew: name=tmux-mem-cpu-load state=latest
     - homebrew: name=tmux state=latest
     - homebrew: name=fish state=latest
     - homebrew: name=vim install_options=with-lua,override-system-vi state=latest
-    - homebrew: name=php56 install_options=overwrite state=linked
-    - homebrew: name=php56-xdebug state=latest
+    - homebrew: name=ctags state=latest
     - homebrew: name=hub state=latest
+    - homebrew: name=wget state=latest
     - homebrew: name=cask state=latest
+    - homebrew: name=php56 state=latest
     - git: repo=https://github.com/gmarik/Vundle.vim.git dest=~/.vim/bundle/vundle
+    - shell: vim +BundleInstall +qa
