@@ -14,6 +14,7 @@
     - homebrew: name=wget state=latest
     - homebrew: name=cask state=latest
     - homebrew: name=php56 state=latest
+    - homebrew: name=composer state=latest
     - homebrew: name=node state=latest
     - git: repo=https://github.com/gmarik/Vundle.vim.git dest=~/.vim/bundle/vundle
     - shell: vim +BundleInstall +qa
