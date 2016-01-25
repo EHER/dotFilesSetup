@@ -23,6 +23,7 @@
     Bundle 'Lokaltog/vim-easymotion'
     Bundle 'Shougo/neocomplcache'
     Bundle 'Shougo/neosnippet'
+    Bundle 'Shougo/neosnippet-snippets'
     Bundle 'afternoon/vim-phpunit'
     Bundle 'airblade/vim-gitgutter'
     Bundle 'altercation/vim-colors-solarized'

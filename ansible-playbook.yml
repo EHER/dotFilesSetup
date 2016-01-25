@@ -1,8 +1,12 @@
 ---
 - hosts: localhost
   tasks:
+    - copy: src=files/.vimrc dest=~/.vimrc
+    - copy: src=files/.tmux.conf dest=~/.tmux.conf
+    - copy: src=files/.config dest=~/.config
     - homebrew_tap: tap=Goles/battery state=present
     - homebrew_tap: tap=homebrew/php state=present
+    - homebrew_tap: tap=caskroom/cask state=present
     - homebrew: update_homebrew=yes
     - homebrew: name=battery state=latest
     - homebrew: name=tmux-mem-cpu-load state=latest
@@ -16,5 +20,10 @@
     - homebrew: name=php56 state=latest
     - homebrew: name=composer state=latest
     - homebrew: name=node state=latest
+    - homebrew: name=docker state=latest
+    - homebrew: name=docker-machine state=latest
+    - homebrew: name=brew-cask state=latest
+    - homebrew_cask: name=virtualbox state=installed
     - git: repo=https://github.com/gmarik/Vundle.vim.git dest=~/.vim/bundle/vundle
-    - shell: vim +BundleInstall +qa
+    - shell: vim +BundleInstall +qa creates=~/.vim/bundle/nerdtree
+    - shell: docker-machine create -d virtualbox dev creates=~/.docker/machine/machines/dev/
