@@ -20,6 +20,7 @@
     - homebrew: name=php56 state=latest
     - homebrew: name=composer state=latest
     - homebrew: name=node state=latest
+    - homebrew: name=python3 state=latest
     - homebrew: name=docker state=latest
     - homebrew: name=docker-machine state=latest
     - homebrew: name=brew-cask state=latest
@@ -27,3 +28,4 @@
     - git: repo=https://github.com/gmarik/Vundle.vim.git dest=~/.vim/bundle/vundle
     - shell: vim +BundleInstall +qa creates=~/.vim/bundle/nerdtree
     - shell: docker-machine create -d virtualbox dev creates=~/.docker/machine/machines/dev/
+    - pip: name=with executable=pip3
