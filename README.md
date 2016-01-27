@@ -6,5 +6,5 @@
 ##Install
 ```
 brew install ansible
-ansible-playbook ansible/playbook.yml -v
+ansible-playbook ansible-playbook.yml -v
 ```
