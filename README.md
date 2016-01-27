@@ -1,7 +1,7 @@
 #dotFiles
 
 ##Dependency
-- [Brew](http://brew.sh)
+- [Homebrew](http://brew.sh)
 
 ##Install
 ```
