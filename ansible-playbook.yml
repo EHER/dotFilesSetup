@@ -1,31 +1,37 @@
 ---
 - hosts: localhost
   tasks:
-    - copy: src=files/.vimrc dest=~/.vimrc
-    - copy: src=files/.tmux.conf dest=~/.tmux.conf
-    - copy: src=files/.config dest=~/.config
+    - file: src={{ playbook_dir }}/files/.vimrc dest=~/.vimrc state=link
+    - file: src={{ playbook_dir }}/files/.bashrc dest=~/.bashrc state=link
+    - file: src={{ playbook_dir }}/files/.tmux.conf dest=~/.tmux.conf state=link
+    - file: src={{ playbook_dir }}/files/.config dest=~/.config state=link
     - homebrew_tap: tap=Goles/battery state=present
     - homebrew_tap: tap=homebrew/php state=present
     - homebrew_tap: tap=caskroom/cask state=present
     - homebrew: update_homebrew=yes
     - homebrew: name=battery state=latest
-    - homebrew: name=tmux-mem-cpu-load state=latest
-    - homebrew: name=tmux state=latest
-    - homebrew: name=fish state=latest
-    - homebrew: name=vim install_options=with-lua,override-system-vi state=latest
-    - homebrew: name=ctags state=latest
-    - homebrew: name=hub state=latest
-    - homebrew: name=wget state=latest
-    - homebrew: name=cask state=latest
-    - homebrew: name=php56 state=latest
     - homebrew: name=composer state=latest
+    - homebrew: name=ctags state=latest
+    - homebrew: name=git state=latest
+    - homebrew: name=hub state=latest
     - homebrew: name=node state=latest
+    - homebrew: name=php70 state=latest
     - homebrew: name=python3 state=latest
-    - homebrew: name=docker state=latest
-    - homebrew: name=docker-machine state=latest
-    - homebrew: name=brew-cask state=latest
+    - homebrew: name=shpotify state=latest
+    - homebrew: name=tmux state=latest
+    - homebrew: name=tmux-mem-cpu-load state=latest
+    - homebrew: name=vim install_options=with-lua,override-system-vi state=latest
+    - homebrew: name=wget state=latest
+    - homebrew_cask: name=docker-beta state=installed
+    - homebrew_cask: name=google-chrome state=installed
+    - homebrew_cask: name=iterm2 state=installed
+    - homebrew_cask: name=lastpass state=installed
+    - homebrew_cask: name=phpstorm state=installed
+    - homebrew_cask: name=sequel-pro state=installed
+    - homebrew_cask: name=slack state=installed
+    - homebrew_cask: name=spotify state=installed
+    - homebrew_cask: name=vagrant state=installed
     - homebrew_cask: name=virtualbox state=installed
     - git: repo=https://github.com/gmarik/Vundle.vim.git dest=~/.vim/bundle/vundle
     - shell: vim +BundleInstall +qa creates=~/.vim/bundle/nerdtree
-    - shell: docker-machine create -d virtualbox dev creates=~/.docker/machine/machines/dev/
     - pip: name=with executable=pip3
