@@ -24,6 +24,7 @@
     Bundle 'Shougo/neocomplcache'
     Bundle 'Shougo/neosnippet'
     Bundle 'Shougo/neosnippet-snippets'
+    Bundle 'adoy/vim-php-refactoring-toolbox'
     Bundle 'afternoon/vim-phpunit'
     Bundle 'airblade/vim-gitgutter'
     Bundle 'altercation/vim-colors-solarized'
@@ -31,7 +32,7 @@
     Bundle 'austintaylor/vim-commaobject'
     Bundle 'beberlei/vim-php-refactor'
     Bundle 'bling/vim-airline'
-    Bundle 'evidens/vim-twig'
+    Bundle 'nelsyeung/twig.vim'
     Bundle 'hhvm/vim-hack'
     Bundle 'honza/vim-snippets'
     Bundle 'jgdavey/tslime.vim'
@@ -54,11 +55,15 @@
     Bundle 'tpope/vim-repeat'
     Bundle 'tpope/vim-surround'
     Bundle 'vim-php/tagbar-phpctags.vim'
+    Bundle 'vim-scripts/vim-auto-save'
     Bundle 'wakatime/vim-wakatime'
-    Bundle 'xolox/vim-easytags'
     Bundle 'xolox/vim-misc'
     Bundle 'xuyuanp/nerdtree-git-plugin'
-
+    Plugin 'mkusher/padawan.vim'
+    
+    " Bundle 'Shougo/vimproc'
+    " Bundle 'Shougo/unite.vim'
+    " Bundle 'm2mdas/phpcomplete-extended'
 " }}}
 
 " Shortcuts {{{
@@ -92,10 +97,14 @@
     cmap <right> <nop>
 
     " ;=: trick
-    "nnoremap ; :
+    nnoremap ; :
 
     " esc trick
-    inoremap jk <esc>
+    imap jj <esc>
+
+    " Git / Fugitive
+    map <leader>9 :Gstatus<CR>
+    map <leader>k :Gcommit<CR>
 
     " Nerdtree shortcut
     map <Leader>n <plug>NERDTreeMirrorToggle<CR>
@@ -145,6 +154,17 @@
     smap <C-k>     <Plug>(neosnippet_expand_or_jump)
     xmap <C-k>     <Plug>(neosnippet_expand_target)
     let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+
+    " EasyMotion
+    let g:EasyMotion_do_mapping = 0
+    nmap s <Plug>(easymotion-overwin-f)
+    nmap s <Plug>(easymotion-overwin-f2)
+    let g:EasyMotion_smartcase = 1
+    map <Leader>j <Plug>(easymotion-j)
+    map <Leader>k <Plug>(easymotion-k)"
+
+    " AutoSave
+    nmap <leader>s :AutoSaveToggle<cr>
 
 " }}}
 
@@ -233,9 +253,25 @@
     let g:ctrlp_working_path_mode = 'ar'
 
     " Ignore files
-    set wildignore+=*/coverage/*,*/tmp/*,*/cache/*,*/log/*,*.so,*.swp,*.zip
+    set wildignore+=*/vendor/*,*/coverage/*,*/tmp/*,*/cache/*,*/log/*,*.so,*.swp,*.zip
 
     " Toggle paste mode
     set pastetoggle=<F2>
 
+    autocmd BufReadPre * if getfsize(expand("%")) > 10000000 | syntax off | endif
+
+    " The Silver Searcher
+    if executable('ag')
+      " Use ag over grep
+      set grepprg=ag\ --nogroup\ --nocolor
+
+      " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+      let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+      " ag is fast enough that CtrlP doesn't need to cache
+      let g:ctrlp_use_caching = 0
+    endif
+
+    " bind K to grep word under cursor
+    nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 " }}}

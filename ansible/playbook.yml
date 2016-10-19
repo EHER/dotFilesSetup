@@ -1,0 +1,14 @@
+---
+- hosts: localhost
+  tasks:
+    - homebrew_tap: tap=Goles/battery state=present
+    - homebrew: update_homebrew=yes
+    - homebrew: name=battery state=latest
+    - homebrew: name=tmux-mem-cpu-load state=latest
+    - homebrew: name=tmux state=latest
+    - homebrew: name=vim install_options=with-lua,override-system-vi state=latest
+    - homebrew: name=php70 install_options=overwrite state=linked
+    - homebrew: name=php70-xdebug state=latest
+    - homebrew: name=hub state=latest
+    - homebrew: name=cask state=latest
+    - git: repo=https://github.com/gmarik/Vundle.vim.git dest=~/.vim/bundle/vundle
