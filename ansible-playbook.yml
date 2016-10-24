@@ -18,6 +18,7 @@
     - homebrew: name=php70 state=latest
     - homebrew: name=python3 state=latest
     - homebrew: name=shpotify state=latest
+    - homebrew: name=slackcat state=latest
     - homebrew: name=tmux state=latest
     - homebrew: name=tmux-mem-cpu-load state=latest
     - homebrew: name=vim install_options=with-lua,override-system-vi state=latest
