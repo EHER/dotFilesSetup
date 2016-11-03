@@ -13,6 +13,7 @@
     - homebrew: name=git state=latest
     - homebrew: name=hub state=latest
     - homebrew: name=php70 state=latest
+    - homebrew: name=reattach-to-user-namespace state=latest
     - homebrew: name=tmux state=latest
     - homebrew: name=tmux-mem-cpu-load state=latest
     - homebrew: name=vim install_options=with-lua,override-system-vi state=latest
