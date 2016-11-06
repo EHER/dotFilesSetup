@@ -38,7 +38,6 @@
     Bundle 'jgdavey/tslime.vim'
     Bundle 'jiangmiao/auto-pairs'
     Bundle 'jistr/vim-nerdtree-tabs'
-    Bundle 'joonty/vim-phpunitqf.git'
     Bundle 'kien/ctrlp.vim'
     Bundle 'majutsushi/tagbar'
     Bundle 'mattn/emmet-vim'
@@ -188,8 +187,8 @@
     match OverLength /\%81v.\+/
 
     " Color Scheme
-    "colorscheme jellybeans
-    colorscheme solarized
+    colorscheme jellybeans
+    "colorscheme solarized
     set background=dark
 
     " Enable syntax colors
@@ -277,4 +276,7 @@
 
     " Enable AutoSave
     let g:auto_save = 1
+
+    " esc for mobile
+    imap jj <esc> 
 " }}}
