@@ -19,6 +19,7 @@
     - homebrew: name=vim install_options=with-lua,override-system-vi state=latest
     - homebrew: name=wget state=latest
     - homebrew: name=shpotify state=latest
+    - homebrew_cask: name=flux state=installed
     - homebrew_cask: name=docker-beta state=installed
     - homebrew_cask: name=google-chrome state=installed
     - homebrew_cask: name=iterm2 state=installed
