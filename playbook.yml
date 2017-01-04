@@ -10,6 +10,7 @@
     - homebrew: update_homebrew=yes
     - homebrew: name=battery state=latest
     - homebrew: name=git state=latest
+    - homebrew: name=tig state=latest
     - homebrew: name=hub state=latest
     - homebrew: name=reattach-to-user-namespace state=latest
     - homebrew: name=tmux state=latest
@@ -28,6 +29,8 @@
     - homebrew_cask: name=spotify state=installed
     - homebrew_cask: name=vagrant state=installed
     - homebrew_cask: name=virtualbox state=installed
+    - homebrew_cask: name=caffeine state=installed
     - git: repo=https://github.com/jimeh/git-aware-prompt.git dest=~/.bash/git-aware-prompt
     - git: repo=https://github.com/gmarik/Vundle.vim.git dest=~/.vim/bundle/vundle
     - shell: vim +BundleInstall +qa creates=~/.vim/bundle/nerdtree
+    - shell: wget -O ~/.bash/git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash creates=~/.bash/git-completion.bash
