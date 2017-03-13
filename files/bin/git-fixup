@@ -1,0 +1,14 @@
+#!/bin/sh
+
+if [ -z $1  ]; then
+    echo "You must provide a file path as parameter.";
+    echo "e.g. ${0} changed-file.sh";
+    exit 1;
+fi
+if [ ! -f $1  ]; then
+    echo "File '${1}' not found!";
+    exit 1;
+fi
+
+MESSAGE="$(git log -1 --format=oneline ${1} | cut -d' ' -f2-)"
+git commit -m "fixup: ${MESSAGE}" $1

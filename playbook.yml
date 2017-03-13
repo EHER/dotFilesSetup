@@ -3,11 +3,14 @@
   tasks:
     - file: src={{ playbook_dir }}/files/.vimrc dest=~/.vimrc state=link
     - file: src={{ playbook_dir }}/files/.bashrc dest=~/.bashrc state=link
+    - file: src={{ playbook_dir }}/files/.bash_profile dest=~/.bash_profile state=link
     - file: src={{ playbook_dir }}/files/.tmux.conf dest=~/.tmux.conf state=link
     - file: src={{ playbook_dir }}/files/.config dest=~/.config state=link
+    - file: src={{ playbook_dir }}/files/bin dest=~/bin state=link
     - homebrew_tap: tap=Goles/battery state=present
     - homebrew_tap: tap=caskroom/cask state=present
     - homebrew: update_homebrew=yes
+    - homebrew: name=ag state=latest
     - homebrew: name=battery state=latest
     - homebrew: name=git state=latest
     - homebrew: name=tig state=latest
@@ -22,7 +25,6 @@
     - homebrew_cask: name=docker-beta state=installed
     - homebrew_cask: name=google-chrome state=installed
     - homebrew_cask: name=iterm2 state=installed
-    - homebrew_cask: name=lastpass state=installed
     - homebrew_cask: name=phpstorm state=installed
     - homebrew_cask: name=sequel-pro state=installed
     - homebrew_cask: name=slack state=installed
