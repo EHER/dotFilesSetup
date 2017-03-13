@@ -1,2 +1,4 @@
-.config/fish/fish_history
-.config/fish/fishd.*
+files/.DS_Store
+files/.bash_profile
+files/.config/hub
+playbook.retry
