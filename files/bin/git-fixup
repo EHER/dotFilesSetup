@@ -10,5 +10,5 @@ if [ ! -f $1  ]; then
     exit 1;
 fi
 
-MESSAGE="$(git log -1 --format=oneline ${1} | cut -d' ' -f2-)"
+MESSAGE="$(git log -1 --format=oneline ${1} | cut -d' ' -f2- | sed 's/fixup: //')"
 git commit -m "fixup: ${MESSAGE}" $1
