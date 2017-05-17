@@ -12,8 +12,10 @@ if [ -f ~/.bash/git-completion.bash  ]; then
     . ~/.bash/git-completion.bash
 fi
 
-alias composer="docker run -e SOMEENV=SOMEVALUE --rm -v $PWD:/app -v ~/.ssh:/root/.ssh composer/composer"
-alias php="docker run -e SOMEENV=SOMEVALUE --rm -v $PWD:/app -w /app php php"
+alias composer="docker run -it --rm --workdir /app -v $PWD:/app -v ~/.ssh:/root/.ssh eher/composer"
+alias php="docker run -it --rm -v $(pwd):/app eher/php"
+alias mysql="docker run -it --rm --workdir /app -v $PWD:/app mysql mysql"
+
 alias sn='spotify next'
 alias sp='spotify prev'
 alias s='spotify pause'

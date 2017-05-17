@@ -1,0 +1,5 @@
+---
+- hosts: localhost
+  tasks:
+    - docker_image: path=docker/php name=eher/php
+    - docker_image: path=docker/composer name=eher/composer
