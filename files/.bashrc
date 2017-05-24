@@ -18,7 +18,7 @@ if hash docker 2>/dev/null; then
     alias composer='docker run -it --rm --workdir /app -v $(pwd):/app -v ~/.ssh:/root/.ssh -v $(pwd)/.composer:/composer eher/composer'
     alias mysql='docker run -it --rm  mysql mysql'
     alias php='docker run -it --rm -v $(pwd):/app eher/php'
-    alias p='ptorm'
+    alias p='pstorm'
 fi
 
 alias sn='spotify next'
