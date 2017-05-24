@@ -280,4 +280,7 @@
 
     " esc for mobile
     imap jj <esc> 
+
+    " open file on phpstorm
+    map <Leader>p :!pstorm %<CR>
 " }}}
