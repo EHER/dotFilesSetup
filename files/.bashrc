@@ -15,13 +15,14 @@ if [ -f ~/.bash/git-completion.bash  ]; then
 fi
 
 if hash docker 2>/dev/null; then
+    alias aws='docker run -it --rm -v $(pwd)/.aws:/root/.aws cgswong/aws aws'
     alias composer='docker run -it --rm --workdir /app -v $(pwd):/app -v ~/.ssh:/root/.ssh -v $(pwd)/.composer:/composer eher/composer'
     alias mysql='docker run -it --rm  mysql mysql'
     alias php='docker run -it --rm -v $(pwd):/app eher/php'
-    alias p='pstorm'
 fi
 
+alias git='hub'
+alias p='pstorm'
+alias s='spotify pause'
 alias sn='spotify next'
 alias sp='spotify prev'
-alias s='spotify pause'
-alias git='hub'
