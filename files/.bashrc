@@ -16,6 +16,7 @@ fi
 
 if hash docker 2>/dev/null; then
     alias aws='docker run -it --rm -v $(pwd)/.aws:/root/.aws cgswong/aws aws'
+    alias bzt='docker run -it --rm -v $(pwd):/share eher/bzt'
     alias composer='docker run -it --rm --workdir /app -v $(pwd):/app -v ~/.ssh:/root/.ssh -v $(pwd)/.composer:/composer eher/composer'
     alias mysql='docker run -it --rm  mysql mysql'
     alias php='docker run -it --rm -v $(pwd):/app eher/php'
