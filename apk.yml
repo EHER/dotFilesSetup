@@ -1,0 +1,15 @@
+---
+
+- name: update APK
+  apk: update_cache=yes
+
+- apk: name={{ item }}
+  with_items:
+      - byobu
+      - git
+      - jq
+      - python-pip
+      - silversearcher-ag
+      - tig
+      - vim
+      - wget
