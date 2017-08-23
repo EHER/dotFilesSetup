@@ -1,0 +1,31 @@
+---
+
+- homebrew_tap: tap=caskroom/cask state=present
+- name: update homebrew
+  homebrew: update_homebrew=yes
+- name: install VIM
+  homebrew: name=vim install_options=with-lua,with-override-system-vi state=latest
+- homebrew: name={{ item }} state=latest
+  with_items:
+      - ag
+      - byobu
+      - git
+      - hub
+      - jq
+      - shpotify
+      - tig
+      - wget
+- homebrew_cask: name={{ item }} state=installed
+  with_items:
+      - aerial
+      - flux
+      - docker-beta
+      - google-chrome
+      - iterm2
+      - phpstorm
+      - sequel-pro
+      - slack
+      - spotify
+      - vagrant
+      - virtualbox
+      - caffeine

@@ -1,0 +1,13 @@
+---
+
+- apt: name={{ item }} state=latest
+  with_items:
+      - ag
+      - byobu
+      - git
+      - hub
+      - jq
+      - shpotify
+      - tig
+      - vim
+      - wget

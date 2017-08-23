@@ -1,34 +1,17 @@
 ---
 - hosts: localhost
   tasks:
+    - include: apt.yml
+      when: "ansible_os_family=='Debian'"
+    - include: brew.yml
+      when: "ansible_os_family=='Darwin'"
+      serial: 1
     - file: src={{ playbook_dir }}/files/.vimrc dest=~/.vimrc state=link
     - file: src={{ playbook_dir }}/files/.bashrc dest=~/.bashrc state=link
     - file: src={{ playbook_dir }}/files/.bash_profile dest=~/.bash_profile state=link
     - file: src={{ playbook_dir }}/files/.config dest=~/.config state=link
     - file: src={{ playbook_dir }}/files/bin dest=~/bin state=link
-    - homebrew_tap: tap=Goles/battery state=present
-    - homebrew_tap: tap=caskroom/cask state=present
-    - homebrew: update_homebrew=yes
-    - homebrew: name=ag state=latest
-    - homebrew: name=ansible state=latest
-    - homebrew: name=byobu state=latest
-    - homebrew: name=git state=latest
-    - homebrew: name=hub state=latest
-    - homebrew: name=shpotify state=latest
-    - homebrew: name=tig state=latest
-    - homebrew: name=vim install_options=with-lua,override-system-vi state=latest
-    - homebrew: name=wget state=latest
-    - homebrew_cask: name=flux state=installed
-    - homebrew_cask: name=docker-beta state=installed
-    - homebrew_cask: name=google-chrome state=installed
-    - homebrew_cask: name=iterm2 state=installed
-    - homebrew_cask: name=phpstorm state=installed
-    - homebrew_cask: name=sequel-pro state=installed
-    - homebrew_cask: name=slack state=installed
-    - homebrew_cask: name=spotify state=installed
-    - homebrew_cask: name=vagrant state=installed
-    - homebrew_cask: name=virtualbox state=installed
-    - homebrew_cask: name=caffeine state=installed
+    - pip: name=markdown
     - git: repo=https://github.com/jimeh/git-aware-prompt.git dest=~/.bash/git-aware-prompt
     - git: repo=https://github.com/gmarik/Vundle.vim.git dest=~/.vim/bundle/vundle
     - shell: vim +BundleInstall +qa creates=~/.vim/bundle/nerdtree
