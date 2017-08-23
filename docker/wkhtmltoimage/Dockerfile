@@ -1,2 +1,3 @@
 FROM eher/wkhtmltox
-CMD /opt/wkhtmltox/bin/wkhtmltoimage
+WORKDIR /tmp/workdir
+ENTRYPOINT ["/opt/wkhtmltox/bin/wkhtmltoimage"]
