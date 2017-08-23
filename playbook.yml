@@ -22,7 +22,5 @@
       with_items:
           - { repo: 'https://github.com/jimeh/git-aware-prompt.git', dest: '~/.bash/git-aware-prompt' }
           - { repo: 'https://github.com/gmarik/Vundle.vim.git', dest: '~/.vim/bundle/vundle' }
-    - name: Install VIM bundles
-      shell: vim +BundleInstall +qa creates=~/.vim/bundle/nerdtree
     - name: Install bash/zsh completion support for core Git
       get_url: dest=~/.bash/git-completion.bash url=https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
