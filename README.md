@@ -6,7 +6,7 @@ Simple Things that makes me Happier @ $HOME
 
 ## Install
 ```
-ansible-playbook playbook.yml -v
+ansible-playbook playbook.yml
 ```
 
 ## Docker images
