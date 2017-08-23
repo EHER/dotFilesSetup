@@ -2,12 +2,11 @@
 
 - apt: name={{ item }} state=latest
   with_items:
-      - ag
+      - silversearcher-ag
       - byobu
       - git
-      - hub
       - jq
-      - shpotify
       - tig
       - vim
+      - python-pip
       - wget

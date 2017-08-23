@@ -15,4 +15,4 @@
     - git: repo=https://github.com/jimeh/git-aware-prompt.git dest=~/.bash/git-aware-prompt
     - git: repo=https://github.com/gmarik/Vundle.vim.git dest=~/.vim/bundle/vundle
     - shell: vim +BundleInstall +qa creates=~/.vim/bundle/nerdtree
-    - shell: wget -O ~/.bash/git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash creates=~/.bash/git-completion.bash
+    - get_url: dest=~/.bash/git-completion.bash url=https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash

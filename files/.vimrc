@@ -19,7 +19,6 @@
 
 " Plugins {{{
 
-    Bundle 'EHER/vim-bundle-freeze'
     Bundle 'Lokaltog/vim-easymotion'
     Bundle 'Shougo/neocomplcache'
     Bundle 'Shougo/neosnippet'
@@ -56,7 +55,6 @@
     Bundle 'tpope/vim-surround'
     Bundle 'vim-php/tagbar-phpctags.vim'
     Bundle 'vim-scripts/vim-auto-save'
-    Bundle 'wakatime/vim-wakatime'
     Bundle 'xolox/vim-misc'
     Bundle 'xuyuanp/nerdtree-git-plugin'
     Plugin 'mkusher/padawan.vim'
@@ -188,7 +186,7 @@
     match OverLength /\%81v.\+/
 
     " Color Scheme
-    colorscheme jellybeans
+    "colorscheme jellybeans
     "colorscheme solarized
     set background=dark
 
