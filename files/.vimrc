@@ -275,8 +275,8 @@
     " bind K to grep word under cursor
     nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
-    " Enable AutoSave
-    let g:auto_save = 1
+    " AutoSave
+    let g:auto_save = 0
 
     " esc for mobile
     imap jj <esc> 
