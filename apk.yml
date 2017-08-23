@@ -8,8 +8,7 @@
       - byobu
       - git
       - jq
-      - python-pip
-      - silversearcher-ag
+      - py2-pip
       - tig
       - vim
       - wget
