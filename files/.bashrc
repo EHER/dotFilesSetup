@@ -22,7 +22,6 @@ if hash docker 2>/dev/null; then
     alias php='docker run -it --rm -v $(pwd):/app eher/php'
 fi
 
-alias git='hub'
 alias p='pstorm'
 alias s='spotify pause'
 alias sn='spotify next'
