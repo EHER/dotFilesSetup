@@ -18,8 +18,9 @@
 - homebrew_cask: name={{ item }} state=installed
   with_items:
       - aerial
-      - flux
+      - caffeine
       - docker-beta
+      - flux
       - google-chrome
       - iterm2
       - phpstorm
@@ -28,4 +29,3 @@
       - spotify
       - vagrant
       - virtualbox
-      - caffeine

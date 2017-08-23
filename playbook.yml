@@ -1,18 +1,28 @@
 ---
 - hosts: localhost
   tasks:
+    - include: apk.yml
+      when: "ansible_os_family=='Alpine'"
     - include: apt.yml
       when: "ansible_os_family=='Debian'"
     - include: brew.yml
       when: "ansible_os_family=='Darwin'"
       serial: 1
-    - file: src={{ playbook_dir }}/files/.vimrc dest=~/.vimrc state=link
-    - file: src={{ playbook_dir }}/files/.bashrc dest=~/.bashrc state=link
-    - file: src={{ playbook_dir }}/files/.bash_profile dest=~/.bash_profile state=link
-    - file: src={{ playbook_dir }}/files/.config dest=~/.config state=link
-    - file: src={{ playbook_dir }}/files/bin dest=~/bin state=link
+    - name: Create symlinks
+      file: src={{ playbook_dir }}/files/{{ item }} dest=~/{{ item }} state=link force=yes
+      with_items:
+          - .bash_profile
+          - .vimrc
+          - .bashrc
+          - .bash_profile
+          - .config
+          - bin
     - pip: name=markdown
-    - git: repo=https://github.com/jimeh/git-aware-prompt.git dest=~/.bash/git-aware-prompt
-    - git: repo=https://github.com/gmarik/Vundle.vim.git dest=~/.vim/bundle/vundle
-    - shell: vim +BundleInstall +qa creates=~/.vim/bundle/nerdtree
-    - get_url: dest=~/.bash/git-completion.bash url=https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+    - git: repo={{ item.repo }} dest={{ item.dest }}
+      with_items:
+          - { repo: 'https://github.com/jimeh/git-aware-prompt.git', dest: '~/.bash/git-aware-prompt' }
+          - { repo: 'https://github.com/gmarik/Vundle.vim.git', dest: '~/.vim/bundle/vundle' }
+    - name: Install VIM bundles
+      shell: vim +BundleInstall +qa creates=~/.vim/bundle/nerdtree
+    - name: Install bash/zsh completion support for core Git
+      get_url: dest=~/.bash/git-completion.bash url=https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
