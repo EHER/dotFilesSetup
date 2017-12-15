@@ -26,3 +26,44 @@ alias p='pstorm'
 alias s='spotify pause'
 alias sn='spotify next'
 alias sp='spotify prev'
+alias digitalocean='open https://cloud.digitalocean.com'
+alias route53='open https://console.aws.amazon.com/route53'
+alias datadog='open https://app.datadoghq.com/infrastructure'
+alias sql='open ~/sequelpro.sql'
+alias logs='open https://logentries.com/app/23011eb6#/dashboard/14593'
+alias slack='open https://werkspot.slack.com/'
+alias eb='vim ~/.bashrc'
+alias sb='source ~/.bashrc'
+alias gif='open https://giphy.com'
+alias twitter='open https://twitter.com'
+alias ci='open https://ci.werkspot.com'
+alias inbox='open https://inbox.google.com/u/0/'
+
+# Nice Greetings
+niceThings=(
+    'you look lovely today'
+    'you are so smart'
+    'I think you are fantastic'
+    'You are super creative'
+    'You can do anything'
+    'You write KICKASS code'
+    'Your hair looks amazing today'
+    'You inspire soooo many people'
+    'You are strong powerful'
+);
+
+emojis=(
+    'ʕᵔᴥᵔʔ'
+    '(｡◕‿◕｡)'
+    '( ˘ ³˘)♥'
+    'ฅ^•ﻌ•^ฅ'
+    '(づ￣ ³￣)づ'
+    '┌(ㆆ㉨ㆆ)ʃ'
+    '“ヽ(´▽｀)ノ”'
+    '♥‿♥'
+    'ᕕ( ᐛ )ᕗ'
+    '(ᵔᴥᵔ)'
+)
+
+index=$(( RANDOM % ${#niceThings[@]} ))
+echo ${emojis[${index}]} ${niceThings[${index}]}
